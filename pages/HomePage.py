@@ -8,5 +8,5 @@ class HomePage(WebGeneric):
         self.logoutBtn_xpath = "//*[contains(text(),'Logout')]"
 
     def acti_logout(self):
-        wg = WebGeneric(self.driver)
-        wg.submit(self.logoutBtn_xpath, loc_type="xpath")
+        #wg = WebGeneric(self.driver)
+        self.submit("xpath", self.logoutBtn_xpath)

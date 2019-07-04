@@ -1,2 +1,2 @@
-USERNAME = "'admin'"
-PASSWORD = "'manager'"
+USERNAME = "admin"
+PASSWORD = "manager"

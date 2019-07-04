@@ -1,3 +1,6 @@
+import xlrd
+
+
 class LocatorGeneric:
 
     def __init__(self, driver):
@@ -13,3 +16,9 @@ class LocatorGeneric:
         elif loc_type == "xpath":
             ele = self.driver.find_element_by_xpath(loc_val)
         return ele
+
+    def get_val_excel(self, sheet_name, wb_path):
+        wb = xlrd.open_workbook(wb_path)
+        ws = wb.sheet_by_name(sheet_name)
+        row_count = ws.nrows
+        col_count = ws.ncols

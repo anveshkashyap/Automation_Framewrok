@@ -6,9 +6,9 @@ class WebGeneric(LocatorGeneric):
         LocatorGeneric.__init__(self, driver)
         self.driver = driver
 
-    def enter(self, locator_val, input_val, loc_type):
+    def enter(self, loc_type, locator_val, input_val):
         self.locator(loc_type, locator_val).send_keys(input_val)
 
-    def submit(self, locator_val, loc_type):
+    def submit(self, loc_type, locator_val):
         self.locator(loc_type, locator_val).click()
 
