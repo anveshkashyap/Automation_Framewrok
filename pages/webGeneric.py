@@ -1,3 +1,7 @@
+from selenium.webdriver import ActionChains
+from selenium.webdriver.support import expected_conditions
+from selenium.webdriver.support.wait import WebDriverWait
+
 from pages.LocatorGeneric import LocatorGeneric
 
 
@@ -10,5 +14,12 @@ class WebGeneric(LocatorGeneric):
         self.locator(loc_type, locator_val).send_keys(input_val)
 
     def submit(self, loc_type, locator_val):
-        self.locator(loc_type, locator_val).click()
+        val = self.locator(loc_type, locator_val)
+        # wait = WebDriverWait(self.driver, 30)
+        # wait.until(expected_conditions.element_to_be_clickable(val))
+        val.click()
+
+    def mouse_hover(self, loc_type, loc_val):
+        action = ActionChains(self.driver)
+        action.move_to_element(self.locator(loc_type, loc_val)).perform()
 

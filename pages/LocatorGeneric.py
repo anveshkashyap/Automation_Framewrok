@@ -11,10 +11,12 @@ class LocatorGeneric:
             ele = self.driver.find_element_by_id(loc_val)
         elif loc_type == "name":
             ele = self.driver.find_element_by_name(loc_val)
-        elif loc_type == "tagname":
+        elif loc_type == "tag_name":
             ele = self.driver.find_element_by_tag_name(loc_val)
         elif loc_type == "xpath":
             ele = self.driver.find_element_by_xpath(loc_val)
+        elif loc_type == "class_name":
+            ele = self.driver.find_element_by_class_name(loc_val)
         return ele
 
     def get_val_excel(self, sheet_name, wb_path):
