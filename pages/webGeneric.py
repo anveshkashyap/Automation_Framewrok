@@ -23,3 +23,11 @@ class WebGeneric(LocatorGeneric):
         action = ActionChains(self.driver)
         action.move_to_element(self.locator(loc_type, loc_val)).perform()
 
+    def switch_frame(self, loc_type, frame_locator):
+        iframe = self.locator(loc_type, frame_locator)
+        self.driver.switch_to.frame(iframe)
+
+    def drag_and_drop(self, src, dest):
+        action = ActionChains(self.driver)
+        action.drag_and_drop(src, dest).perform()
+
